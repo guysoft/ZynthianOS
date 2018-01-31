@@ -1,0 +1,2 @@
+JACKPI_VAR="This is a module variable"
+[ -n "$BASE_ZIP_IMG" ] || BASE_ZIP_IMG=`ls -t $BASE_IMAGE_PATH/*-realtimepi*.zip | head -n 1`
