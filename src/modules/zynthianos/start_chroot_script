@@ -4,7 +4,7 @@
 # Written by Guy Sheffer <guysoft at gmail dot com>
 # GPL V3
 ########
-set +x
+set -x
 # Source error handling, leave this in place
 source /common.sh
 install_cleanup_trap
@@ -23,8 +23,11 @@ DEBIAN_FRONTEND=noninteractive apt-get install -y jackd
 # Enable realtime permissions (taken from /etc/security/limits.d/audio.conf.disabled )
 dpkg-reconfigure -p high jackd
 
-gitclone ZYNTHIANOS_SYS_REPO zynthian-sys
-pushd zynthian-sys/scripts
-  ln -s /home/pi /zynthian
-  bash -x setup_system_rbpi_raspbian_lite_stretch.sh
+sudo -u pi mkdir -p /home/pi/build
+pushd /home/pi/build
+    gitclone ZYNTHIANOS_SYS_REPO zynthian-sys
+    pushd zynthian-sys/scripts
+      ln -s /home/pi /zynthian
+      bash -x setup_system_rbpi_raspbian_lite_stretch.sh
+    popd
 popd
