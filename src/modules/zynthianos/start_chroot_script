@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# Script to build ZynthianOS
+# The start Script for this module
+# Written by Guy Sheffer <guysoft at gmail dot com>
+# GPL V3
+########
+set +x
+# Source error handling, leave this in place
+source /common.sh
+install_cleanup_trap
+
+unpack /filesystem/home/pi /home/pi pi
+unpack /filesystem/home/root /root root
+unpack /filesystem/boot /boot
+
+# Unpack root at the end, so files are modified before
+unpack /filesystem/root /
+
+
+apt-get update
+DEBIAN_FRONTEND=noninteractive apt-get install -y jackd
+
+# Enable realtime permissions (taken from /etc/security/limits.d/audio.conf.disabled )
+dpkg-reconfigure -p high jackd
+
+git clone https://github.com/guysoft/zynthian-sys.git
+gitclone OCTOPI_OCTOPRINT_REPO OctoPrint
+pushd zynthian-sys/scripts
+  ln -s /home/pi /zynthian
+  bash -x setup_system_rbpi_raspbian_lite_stretch.sh
+popd

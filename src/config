@@ -1,12 +1,13 @@
-export DIST_NAME=JackPi
+export DIST_NAME=ZynthianOS
 export DIST_VERSION=0.1
-export MODULES="base(disable-services(gui(jackpi)))"
+export MODULES="base(disable-services(zynthianos))"
 
 # if set will enlarge root parition prior to build by provided size in MB
-export BASE_IMAGE_ENLARGEROOT=1000
+export BASE_IMAGE_ENLARGEROOT=12000
+#export BASE_IMAGE_ENLARGEROOT=3000
+
 
 # if set will resize root partition on image after build to minimum size + 
 # provided size in MB
 export BASE_IMAGE_RESIZEROOT=200
-export GUI_STARTUP_SCRIPT=qjackctl
-
+BASE_APT_CACHE=${DIST_PATH}/aptcache
