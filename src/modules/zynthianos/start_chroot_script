@@ -23,8 +23,7 @@ DEBIAN_FRONTEND=noninteractive apt-get install -y jackd
 # Enable realtime permissions (taken from /etc/security/limits.d/audio.conf.disabled )
 dpkg-reconfigure -p high jackd
 
-git clone https://github.com/guysoft/zynthian-sys.git
-gitclone OCTOPI_OCTOPRINT_REPO OctoPrint
+gitclone ZYNTHIANOS_SYS_REPO zynthian-sys
 pushd zynthian-sys/scripts
   ln -s /home/pi /zynthian
   bash -x setup_system_rbpi_raspbian_lite_stretch.sh
