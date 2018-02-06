@@ -10,3 +10,4 @@ src/workspace
 src/build.log
 src/vagrant/*.log
 src/vagrant/.vagrant
+src/aptcache/*
