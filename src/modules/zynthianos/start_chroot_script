@@ -16,6 +16,8 @@ unpack /filesystem/boot /boot
 # Unpack root at the end, so files are modified before
 unpack /filesystem/root /
 
+# Make root password raspberry
+echo root:raspberry | chpasswd
 
 apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get install -y jackd
