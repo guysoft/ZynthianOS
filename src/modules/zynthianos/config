@@ -3,6 +3,6 @@
 
 [ -n "$BASE_ZIP_IMG" ] || BASE_ZIP_IMG=`ls -t $BASE_IMAGE_PATH/*-realtimepi*.zip | head -n 1`
 #  repo zynthian-sys & branch
-[ -n "$ZYNTHIANOS_SYS_REPO_SHIP" ] || ZYNTHIANOS_SYS_REPO_SHIP=https://github.com/guysoft/zynthian-sys.git
+[ -n "$ZYNTHIANOS_SYS_REPO_SHIP" ] || ZYNTHIANOS_SYS_REPO_SHIP=https://github.com/zynthian/zynthian-sys.git
 [ -n "$ZYNTHIANOS_SYS_REPO_BUILD" ] || ZYNTHIANOS_SYS_REPO_BUILD=
-[ -n "$ZYNTHIANOS_SYS_REPO_BRANCH" ] || ZYNTHIANOS_SYS_REPO_BRANCH=realtimepi-test
+[ -n "$ZYNTHIANOS_SYS_REPO_BRANCH" ] || ZYNTHIANOS_SYS_REPO_BRANCH=CustomPiOS

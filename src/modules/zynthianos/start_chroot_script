@@ -28,6 +28,13 @@ pushd /home/pi/build
     gitclone ZYNTHIANOS_SYS_REPO zynthian-sys
     pushd zynthian-sys/scripts
       ln -s /home/pi /zynthian
+      
+      export ZYNTHIAN_INCLUDE_RPI_UPDATE=no
+      export ZYNTHIAN_INCLUDE_PIP=no
+      export ZYNTHIAN_CHANGE_HOSTNAME=no
+      export ZYNTHIAN_SYS_REPO=${ZYNTHIANOS_SYS_REPO}
+      export ZYNTHIAN_SYS_BRANCH=${ZYNTHIANOS_SYS_REPO_BRANCH}
+      
       bash -x setup_system_rbpi_raspbian_lite_stretch.sh
     popd
 popd
