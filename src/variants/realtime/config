@@ -1,0 +1,1 @@
+BASE_ZIP_IMG=`ls -t $BASE_IMAGE_PATH/*-realtimepi*.zip | head -n 1`
