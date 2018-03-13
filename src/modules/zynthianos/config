@@ -5,4 +5,4 @@
 #  repo zynthian-sys & branch
 [ -n "$ZYNTHIANOS_SYS_REPO_SHIP" ] || ZYNTHIANOS_SYS_REPO_SHIP=https://github.com/zynthian/zynthian-sys.git
 [ -n "$ZYNTHIANOS_SYS_REPO_BUILD" ] || ZYNTHIANOS_SYS_REPO_BUILD=
-[ -n "$ZYNTHIANOS_SYS_REPO_BRANCH" ] || ZYNTHIANOS_SYS_REPO_BRANCH=CustomPiOS
+[ -n "$ZYNTHIANOS_SYS_REPO_BRANCH" ] || ZYNTHIANOS_SYS_REPO_BRANCH=master
