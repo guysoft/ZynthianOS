@@ -1,5 +1,5 @@
 export DIST_NAME=ZynthianOS
-export DIST_VERSION=0.1
+export DIST_VERSION=1.0.0
 export MODULES="base(disable-services(zynthianos))"
 export BASE_OVERRIDE_HOSTNAME=zynthian
 
