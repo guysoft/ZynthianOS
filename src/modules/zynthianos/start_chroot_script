@@ -20,6 +20,7 @@ unpack /filesystem/root /
 # Make root password raspberry
 echo root:raspberry | chpasswd
 echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+sed -i 's/PermitRootLogin without-password//g' /etc/ssh/sshd_config
 
 apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get install -y jackd
