@@ -35,6 +35,7 @@ cd /tmp
 wget https://bootstrap.pypa.io/get-pip.py
 python get-pip.py
 python3 get-pip.py
+pip3 install http://github.com/dlitz/pycrypto/tarball/v2.7a1
 pip3 install requests
 pip3 install -I --no-cache-dir Pillow
 
