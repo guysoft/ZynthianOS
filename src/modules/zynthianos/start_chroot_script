@@ -17,11 +17,6 @@ unpack /filesystem/boot /boot
 # Unpack root at the end, so files are modified before
 unpack /filesystem/root /
 
-# Make root password raspberry
-echo root:raspberry | chpasswd
-echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
-sed -i 's/PermitRootLogin without-password//g' /etc/ssh/sshd_config
-
 apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get install -y jackd
 
@@ -55,3 +50,8 @@ pushd /home/pi/build
       # chmod 777 /zynthian/zynthian-data/midi-profiles/default.sh
     popd
 popd
+
+# Make root password raspberry
+echo root:raspberry | chpasswd
+echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+sed -i 's/PermitRootLogin without-password//g' /etc/ssh/sshd_config
