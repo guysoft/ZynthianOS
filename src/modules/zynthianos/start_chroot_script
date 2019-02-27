@@ -51,6 +51,9 @@ pushd /home/pi/build
     popd
 popd
 
+# Copy Soundfonts
+unpack /filesystem/zynthian/soundfonts /zynthian/zynthian-data/soundfonts
+
 # Make root password raspberry
 echo root:raspberry | chpasswd
 echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
