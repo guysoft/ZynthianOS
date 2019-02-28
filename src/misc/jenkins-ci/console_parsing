@@ -1,0 +1,19 @@
+# error /BUILD FAILED/
+error /mv: cannot stat/
+error /md5sum: * No such file or directory/
+error /Error is not recoverable: exiting now/
+error /Network is unreachable/
+error /error: timed out/
+error /404  Not Found/
+error /Failed to fetch/
+warn /Traceback/
+error /error: Your local changes to the following files would be overwritten by merge/
+error /\/bin\/cp: cannot stat \'\/filesystem\/.*\/.\': No such file or directory/
+error /E: Package/
+error /ERROR 404: Not Found/
+warn /] Error 2/
+warn /] Error 1/
+error /VM must be running to open SSH connection/
+error /^BUILD FAILED!/
+warn /Package * was not found in the pkg-config search path./
+warn /No package '*' found/
