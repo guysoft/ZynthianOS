@@ -101,6 +101,7 @@ Usage
 ~~~~~
 
 #. If needed, override existing config settings by creating a new file ``src/config.local``. You can override all settings found in ``src/config``. If you need to override the path to the Raspbian image to use for building OctoPi, override the path to be used in ``ZIP_IMG``. By default, the most recent file matching ``*-raspbian.zip`` found in ``src/image`` will be used.
+#. If you want to include extra soundfonts in the image, you have to copy them to ``src/modules/zynthianos/filesystem/soundfonts``. You have to organize your soundfonts in 3 subdirs, by format: SF2, SFZ, GIG
 #. Run ``src/build_dist`` as root.
 #. The final image will be created in ``src/workspace``
 
