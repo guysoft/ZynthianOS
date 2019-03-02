@@ -39,3 +39,7 @@ echo root:raspberry | chpasswd
 # Allow SSH root login
 echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 sed -i 's/PermitRootLogin without-password//g' /etc/ssh/sshd_config
+
+# Copy Soundfonts
+unpack /filesystem/soundfonts /zynthian/zynthian-data/soundfonts
+
