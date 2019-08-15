@@ -20,4 +20,5 @@ error /failed to set up loop device/
 warn /No package '*' found/
 warn /Unable to locate package/
 warn /XXX No such file or directory/
+warn /FILE SYSTEM WAS MODIFIED/
 

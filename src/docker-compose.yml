@@ -9,6 +9,7 @@ services:
     privileged: true
     volumes:
       - ./:/distro
+      #- /home/guysoft/CustomPiOS:/CustomPiOS/src
     devices:
       - /dev/loop-control
     labels:

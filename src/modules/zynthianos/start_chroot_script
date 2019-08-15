@@ -4,8 +4,10 @@
 # Written by Guy Sheffer <guysoft at gmail dot com>
 # GPL V3
 ########
+
 set -x
 alias bash='bash -x'
+
 # Source error handling, leave this in place
 source /common.sh
 install_cleanup_trap
@@ -17,21 +19,27 @@ unpack /filesystem/boot /boot
 # Unpack root at the end, so files are modified before
 unpack /filesystem/root /
 
+# Install needed packages
+apt -y install git 
+
+# Prepare dirs
 sudo -u pi mkdir -p /home/pi/build
+ln -s /home/pi /zynthian
+
 pushd /home/pi/build
     gitclone ZYNTHIANOS_SYS_REPO zynthian-sys
     pushd zynthian-sys/scripts
-      ln -s /home/pi /zynthian
-      
-      export ZYNTHIAN_INCLUDE_RPI_UPDATE=no
-      export ZYNTHIAN_INCLUDE_PIP=yes
-      export ZYNTHIAN_CHANGE_HOSTNAME=no
-      export ZYNTHIAN_SYS_REPO=${ZYNTHIANOS_SYS_REPO}
-      export ZYNTHIAN_SYS_BRANCH=${ZYNTHIANOS_SYS_REPO_BRANCH}
-      
-      bash -x setup_system_rbpi_raspbian_lite_stretch.sh
+        export ZYNTHIAN_INCLUDE_RPI_UPDATE=yes
+        export ZYNTHIAN_INCLUDE_PIP=yes
+        export ZYNTHIAN_CHANGE_HOSTNAME=yes
+        export ZYNTHIAN_SYS_REPO=${ZYNTHIANOS_SYS_REPO}
+        export ZYNTHIAN_SYS_BRANCH=${ZYNTHIANOS_SYS_REPO_BRANCH}
+        bash -x setup_system_rbpi_raspbian_lite_buster.sh
     popd
 popd
+
+# Copy Soundfonts
+unpack /filesystem/soundfonts /zynthian/zynthian-data/soundfonts
 
 # Make root password raspberry
 echo root:raspberry | chpasswd
@@ -39,3 +47,6 @@ echo root:raspberry | chpasswd
 # Allow SSH root login
 echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 sed -i 's/PermitRootLogin without-password//g' /etc/ssh/sshd_config
+
+# Disable User Pi
+passwd -l pi
