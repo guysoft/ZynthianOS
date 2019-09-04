@@ -1,7 +1,7 @@
 ZynthianOS
 ===========
 
-A `Raspberry Pi <http://www.raspberrypi.org/>`_ distribution to to run `Zynthian: The Open Synth Platform <http://zynthian.org/>`_ out of the box. This repository contains the source script to generate the distribution out of an existing `RealtimePi <https://github.com/guysoft/RealtimePi>`_ distro image. `You can download a built image here <http://unofficialpi.org/Distros/ZynthianOS/>`_
+A `Raspberry Pi <http://www.raspberrypi.org/>`_ distribution that runs `Zynthian: The Open Synth Platform <http://zynthian.org/>`_ out of the box. This repository contains the source script to generate the distribution out of an existing `RealtimePi <https://github.com/guysoft/RealtimePi>`_ distro image. `You can download a built image here <http://unofficialpi.org/Distros/ZynthianOS/>`_
 
 Where to get it?
 ----------------
@@ -16,7 +16,7 @@ How to use it?
 #. Configure your WiFi by editing ``realtimepi-network.txt`` or ``realtimepi-wpa-supplicant.txt`` on the root of the flashed card when using it like a flash drive
 #. Boot the Pi from the SD card
 # TODO: Add here what to do
-#. If needed Log into your Pi via SSH (it is located at ``realtimepi.local`` `if your computer supports bonjour <https://learn.adafruit.com/bonjour-zeroconf-networking-for-windows-and-linux/overview>`_ or the IP address assigned by your router), default username is "pi", default password is "raspberry", change the password using the ``passwd`` command and expand the filesystem of the SD card through the corresponding option when running ``sudo raspi-config``.
+#. If needed, log into your Pi via SSH (it is located at ``realtimepi.local`` `if your computer supports bonjour <https://learn.adafruit.com/bonjour-zeroconf-networking-for-windows-and-linux/overview>`_ or the IP address assigned by your router), default username is "pi", default password is "raspberry", change the password using the ``passwd`` command and expand the filesystem of the SD card through the corresponding option when running ``sudo raspi-config``.
 
 Requirements
 ------------
@@ -77,7 +77,7 @@ To build a variant use::
     
 Building Using Vagrant
 ~~~~~~~~~~~~~~~~~~~~~~
-There is a vagrant machine configuration to let build ZynthianOS in case your build environment behaves differently. Unless you do extra configuration, vagrant must run as root to have nfs folder sync working.
+There is a vagrant machine configuration available to build ZynthianOS in case your build environment behaves differently. Unless you do extra configuration, vagrant must run as root to have nfs folder sync working.
 
 To use it::
 
@@ -87,7 +87,7 @@ To use it::
     cd CustomPiOS/src/vagrant
     sudo vagrant up
 
-After provisioning the machine, its also possible to run a nightly build which updates from devel using::
+After provisioning the machine, it's also possible to run a nightly build which updates from devel using::
 
     cd CustomPiOS/src/vagrant
     run_vagrant_build.sh
