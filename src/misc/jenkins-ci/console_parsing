@@ -16,5 +16,9 @@ warn /] Error 1/
 error /VM must be running to open SSH connection/
 error /^BUILD FAILED!/
 error /Package * was not found in the pkg-config search path./
+error /failed to set up loop device/
 warn /No package '*' found/
-error /No such file or directory/
+warn /Unable to locate package/
+warn /XXX No such file or directory/
+warn /FILE SYSTEM WAS MODIFIED/
+
