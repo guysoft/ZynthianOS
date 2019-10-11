@@ -38,6 +38,9 @@ pushd /home/pi/build
     popd
 popd
 
+# Cleanup build directory
+rm -rf /home/pi/build
+
 # Copy Soundfonts
 unpack /filesystem/soundfonts /zynthian/zynthian-data/soundfonts
 
