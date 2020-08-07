@@ -29,7 +29,7 @@ ln -s /home/pi /zynthian
 pushd /home/pi/build
     gitclone ZYNTHIANOS_SYS_REPO zynthian-sys
     pushd zynthian-sys/scripts
-        export ZYNTHIAN_INCLUDE_RPI_UPDATE=yes
+        export ZYNTHIAN_INCLUDE_RPI_UPDATE=no
         export ZYNTHIAN_INCLUDE_PIP=yes
         export ZYNTHIAN_CHANGE_HOSTNAME=yes
         export ZYNTHIAN_SYS_REPO=${ZYNTHIANOS_SYS_REPO}
