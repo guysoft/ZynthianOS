@@ -20,7 +20,7 @@ unpack /filesystem/boot /boot
 unpack /filesystem/root /
 
 # Install needed packages
-apt -y install git 
+apt-get -y install git 
 
 # Prepare dirs
 sudo -u pi mkdir -p /home/pi/build
