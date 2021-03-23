@@ -22,3 +22,9 @@ services:
       - /root/.docker/config.json:/config.json
     command: --cleanup --label-enable --interval 30
     restart: always
+
+networks:                                
+  default:                               
+    driver: bridge                       
+    driver_opts:                         
+      com.docker.network.driver.mtu: 1400

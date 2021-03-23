@@ -20,7 +20,7 @@ unpack /filesystem/boot /boot
 unpack /filesystem/root /
 
 # Install needed packages
-apt -y install git 
+apt-get -y install git 
 
 # Prepare dirs
 sudo -u pi mkdir -p /home/pi/build
@@ -29,7 +29,7 @@ ln -s /home/pi /zynthian
 pushd /home/pi/build
     gitclone ZYNTHIANOS_SYS_REPO zynthian-sys
     pushd zynthian-sys/scripts
-        export ZYNTHIAN_INCLUDE_RPI_UPDATE=yes
+        export ZYNTHIAN_INCLUDE_RPI_UPDATE=no
         export ZYNTHIAN_INCLUDE_PIP=yes
         export ZYNTHIAN_CHANGE_HOSTNAME=yes
         export ZYNTHIAN_SYS_REPO=${ZYNTHIANOS_SYS_REPO}
@@ -37,6 +37,10 @@ pushd /home/pi/build
         bash -x setup_system_rbpi_raspbian_lite_buster.sh
     popd
 popd
+
+# Cleanup build directory
+rm -rf /home/pi/build
+rm -f /home/pi/README
 
 # Copy Soundfonts
 unpack /filesystem/soundfonts /zynthian/zynthian-data/soundfonts
@@ -50,3 +54,4 @@ sed -i 's/PermitRootLogin without-password//g' /etc/ssh/sshd_config
 
 # Disable User Pi
 passwd -l pi
+
